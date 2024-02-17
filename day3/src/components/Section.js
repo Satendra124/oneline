@@ -40,8 +40,8 @@ const Section = () => {
         code
     ]
     useEffect(()=>{
-        console.log('current page', currentPage);
-        console.log('counter', counter);
+        // console.log('current page', currentPage);
+        // console.log('counter', counter);
     },[counter, currentPage])
 
 

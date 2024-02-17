@@ -14,7 +14,9 @@
         }
     }
 }
-
+.intro{
+    flex: 1;
+}
 .greeting ,.name{
     font-size: 40px;
     font-family: poppins;
@@ -22,7 +24,7 @@
     margin: 5px;
     color: #2D1D61;
     @media screen and (max-width: 1000px) {
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
@@ -38,10 +40,13 @@
 }
 .title{
     margin: 5px;
-    font-size: 20px;
+    font-size: 10px;
     font-family: poppins;
     font-weight: 400;
     color: #363049;
+    @media screen and (max-width: 1000px) {
+        font-size: 15px !important;
+    }
 }
 
 .quote{
@@ -64,10 +69,10 @@
 }
 
 .scroll-indicator{
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
+    /* position: absolute; */
+    /* bottom: 30px; */
+    /* left: 0; */
+    /* right: 0; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,6 +82,12 @@
     color: #363049;
     font-size: 15px;
     @media screen and (max-width: 1000px) {
-        display: none;
+        bottom: 225px;
+    }
+    span{
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 5px;
     }
 }

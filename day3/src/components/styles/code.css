@@ -18,9 +18,44 @@
     top: 0;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
     @media screen and (max-width: 1000px) {
         width: 90%;
         height: 200px;
+        bottom: 0;
+        margin-bottom: unset;
+        margin-top: unset;
+        top: auto;
+        left: auto;
+        right: auto;
     }
     z-index: 10000;
+}
+.language-selector{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
+}
+
+.language{
+    margin: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40px;
+    text-align: center;
+    font-size: 13px;
+}
+.active{
+    background-color: white;
+    color: black;
 }

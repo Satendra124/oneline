@@ -7,39 +7,28 @@ import 'react-social-icons/github'
 import { motion } from 'framer-motion';
 import ScrollableDiv from '../components/ScrollableDiv';
 
-const Introduction = ({ progress }) => {
+const Introduction = ({ progress, page }) => {
     /**
      * Animation - 
-     * 0.0 - 0.2 entry animation
-     * 0.2 - 0.4 - text writing animation
-     * 0.4 - 0.7 - scroller
-     * 0.7 - 0.9 - code 
-     * 0.9 - 1.0 - exit animation
+     * -1.1 - 1.1 - entry
+     * 1.1 - 1.9 - other animations
+     * 1.9 - 2.1 - exit
      */
-    const startAnimationPercentage = Math.min(1, progress / 0.2);
-    const endAnimationPercentage = 1 - Math.min(1, (progress - 0.7) / 0.3);
-
     const getAnimation = () => {
-        if (progress < 0.2) {
-            return {
-                x: startAnimationPercentage,
-                opacity: startAnimationPercentage,
-                scale: startAnimationPercentage
-            }
-        } else if (progress > 0.7) {
-            return {
-                x: endAnimationPercentage,
-                opacity: endAnimationPercentage,
-                scale: endAnimationPercentage
-            }
-        } else {
-            return { opacity: 1, scale: 1 }
+        if (progress <= 0.1) {
+            // in animation from side
+            return { x: -300 + progress * 300, opacity: progress / 0.1, scale: progress / 0.1 }
+        } else if (progress >= 0.95) {
+            // out animation from side
+            return { x: 100 - (progress - 0.95) * 100, opacity: 0, scale: 0 }
+        } else if (progress < 0.95 && progress > 0.1) {
+            return { y: 50 - (progress - 0.1) * 50 / 0.95, opacity: 1, scale: 1 }
         }
     }
 
     const getName = ()=>{
         if(progress<0.2) return "";
-        else return ("Satendra Raj").slice(0,Math.min(12, Math.floor(((progress-0.2))*40)));
+        else return ("Satendra").slice(0,Math.min(9, Math.floor(((progress-0.2))*40)));
     }
 
     return (
@@ -63,9 +52,9 @@ const Introduction = ({ progress }) => {
                         <SocialIcon url="www.github.com" className="social-icon" />
                     </div>
                 </motion.div>
-                <div className='scroll-indicator'>
+                {/* <motion.div className='scroll-indicator' animate={getAnimation()}>
                     <span>Relax! and scroll down</span>
-                </div>
+                </motion.div> */}
             </div>
         // </ScrollableDiv>
     )

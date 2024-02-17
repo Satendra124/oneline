@@ -19,10 +19,6 @@ const Contact = ({progress}) => {
                 opacity: startAnimationPercentage,
                 scale: startAnimationPercentage
             }
-        } else if (progress > 0.7) {
-            return {x: endAnimationPercentage,
-            opacity: endAnimationPercentage,
-            scale: endAnimationPercentage}
         } else {
             return {opacity: 1, scale: 1}
         }
@@ -39,13 +35,13 @@ const Contact = ({progress}) => {
                     animate={getAnimation()}
                 >
                     <div className='greeting'>Lets get in touch!</div>
-                    <div className='name'>I'm <span className='nameInternal'>Satendra Raj</span></div>
+                    <div className='name'>I'm <span className='nameInternal'>Satendra</span></div>
                     <div className='quote'>And I may be the only one who can fix your bug</div>
                     <div className='quote'>satendra.exe@gmail.com</div>
                     <div className='social'>
-                        <SocialIcon url="www.instagram.com" className="social-icon"/>
-                        <SocialIcon url="www.linkedin.com" className="social-icon"/>
-                        <SocialIcon url="www.github.com" className="social-icon"/>
+                        <SocialIcon url="www.instagram.com/satendra_124" className="social-icon"/>
+                        <SocialIcon url="www.linkedin.com/in/satendra-raj-90421219b" className="social-icon"/>
+                        <SocialIcon url="www.github.com/satendra124" className="social-icon"/>
                     </div>
                 </motion.div>
             </div>

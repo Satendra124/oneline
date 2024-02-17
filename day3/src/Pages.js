@@ -8,15 +8,31 @@ const Pages = ({page, progress}) =>{
 
     switch(page){
         case 1:
-            return <Introduction progress = {progress}/>
+            return (
+                <>
+                    <Introduction progress = {progress} page = {page}/>
+                </>
+            )
         case 2:
-            return <Skills progress = {progress}/>
+            return (
+                <>
+                    <Skills progress = {progress} page = {page}/>
+                </>
+            )
         case 3:
-            return <Experiences progress = {progress}/>
+            return (
+                <>
+                    <Experiences progress = {progress} page = {page}/>
+                </>
+            )
         case 4:
-            return <Projects progress = {progress}/>
+            return (
+                <>
+                    <Projects progress = {progress} page = {page}/>
+                </>
+            )
         default:
-            return <Contact progress = {progress}/>
+            return <Contact progress = {progress} page = {page}/>
     }
 }
 
